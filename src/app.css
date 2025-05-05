@@ -12,3 +12,31 @@ h3 {
 p {
 	@apply text-xl;
 }
+
+html {
+	font-family: 'Manrope', sans-serif;
+	background-color: rgb(24, 27, 36);
+	@apply text-slate-200;
+}
+
+.bebas-neue-regular {
+	font-family: 'Bebas Neue', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.center {
+	@apply flex flex-col items-center justify-center;
+}
+
+.footer-text {
+	@apply text-base;
+}
+
+.footer-color {
+	background-color: rgb(19, 21, 29);
+}
+
+.subtitle {
+	font-size: 14.5px;
+}

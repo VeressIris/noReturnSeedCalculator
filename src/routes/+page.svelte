@@ -21,17 +21,31 @@
 	}
 </script>
 
-<div class="flex flex-col items-center justify-center my-8 mx-20">
-	<h1>Welcome to No Return Seed Calculator</h1>
-	<h2>Today's daily run seed is:</h2>
-	<p>{dailyRunSeed}</p>
-	<h3>Pick a date:</h3>
-	<p>See the seed of any daily run</p>
-	<input type="date" bind:value={selectedDate} class="border-2 border-gray-300 rounded-md p-2" />
-	{#if selectedDate}
-		<p class="mt-4">
-			The seed for {new Date(selectedDate).toLocaleDateString('en-US', dateOptions)} was:
-		</p>
-		<p>{getSeed(new Date(selectedDate))}</p>
-	{/if}
+<div class="center mt-14 mx-12">
+	<div class="mb-4">
+		<h1 class="mb-2">
+			Welcome to <br /> <span class="text-orange-500 uppercase">No Return</span> Seed Calculator
+		</h1>
+		<p>See the seed of any daily run.</p>
+	</div>
+	<div class="center my-6">
+		<h2 class="mb-2 text-center">
+			<span class="text-orange-500">Today</span>'s daily run seed is:
+		</h2>
+		<h3 class="text-white">{dailyRunSeed}</h3>
+	</div>
+	<div class="center mt-2">
+		<h3>Pick a date:</h3>
+		<input
+			type="date"
+			bind:value={selectedDate}
+			class="border-2 border-gray-300 rounded-lg py-2 px-2.5 my-2"
+		/>
+		{#if selectedDate}
+			<p>
+				The seed for {new Date(selectedDate).toLocaleDateString('en-US', dateOptions)} was:
+			</p>
+			<p class="text-white">{getSeed(new Date(selectedDate))}</p>
+		{/if}
+	</div>
 </div>
