@@ -42,10 +42,18 @@
 			class="border-2 border-gray-300 rounded-lg py-2 px-2.5 my-2"
 		/>
 		{#if selectedDate}
-			<p>
-				The seed for {new Date(selectedDate).toLocaleDateString('en-US', dateOptions)} was:
-			</p>
-			<p class="text-white">{getSeed(new Date(selectedDate))}</p>
+			{#if new Date(selectedDate) <= new Date()}
+				<p class="mt-2">
+					The seed for <span class="font-medium text-orange-500">
+						{new Date(selectedDate).toLocaleDateString('en-US', dateOptions)}</span
+					> was:
+				</p>
+				<p class="text-white font-semibold">{getSeed(new Date(selectedDate))}</p>
+			{:else}
+				<p class="mt-2">
+					Please select a date <span class="text-orange-500">before</span> today to see the seed.
+				</p>
+			{/if}
 		{/if}
 	</div>
 </div>
