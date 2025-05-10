@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { render } from 'svelte/server';
+
 	const releaseDate = new Date('2024-01-19');
 	// const firstSeed = 19741; // by my (poor?) calculations
 	const dateOptions = {
@@ -48,6 +50,21 @@
 	}
 </script>
 
+{#snippet otherDays(selectedDate: Date, tense: String)}
+	<p class="mt-2">
+		The seed for <span class="font-medium text-orange-500">
+			{new Date(selectedDate).toLocaleDateString('en-US', dateOptions)}</span
+		>
+		{tense}:
+	</p>
+	<p class="font-semibold">{getSeed(new Date(selectedDate))}</p>
+	<p>
+		playing as <span class="text-orange-500 font-semibold"
+			>{getCharacter(new Date(selectedDate))}</span
+		>
+	</p>
+{/snippet}
+
 <div class="center mt-14 mx-12">
 	<div class="mb-4">
 		<h1 class="mb-2">
@@ -73,21 +90,9 @@
 		/>
 		{#if selectedDate}
 			{#if new Date(selectedDate) <= new Date()}
-				<p class="mt-2">
-					The seed for <span class="font-medium text-orange-500">
-						{new Date(selectedDate).toLocaleDateString('en-US', dateOptions)}</span
-					> was:
-				</p>
-				<p class="font-semibold">{getSeed(new Date(selectedDate))}</p>
-				<p>
-					playing as <span class="text-orange-500 font-semibold"
-						>{getCharacter(new Date(selectedDate))}</span
-					>
-				</p>
+				{@render otherDays(selectedDate, 'was')}
 			{:else}
-				<p class="mt-2">
-					Please select a date <span class="text-orange-500">before</span> today to see the seed.
-				</p>
+				{@render otherDays(selectedDate, 'will be')}
 			{/if}
 		{/if}
 	</div>
