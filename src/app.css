@@ -40,3 +40,7 @@ html {
 .subtitle {
 	font-size: 14.5px;
 }
+
+.special-paragraph {
+	@apply text-2xl;
+}

@@ -1,23 +1,50 @@
 <script lang="ts">
-	const releaseDate = new Date('01/19/2024');
-	const firstSeed = 19741;
-	const dailyRunSeed: number = getSeed(new Date());
-
-	let selectedDate: Date | null = null;
-
+	const releaseDate = new Date('2024-01-19');
+	// const firstSeed = 19741; // by my (poor?) calculations
 	const dateOptions = {
 		year: 'numeric',
 		month: 'long',
 		day: 'numeric'
 	};
 
+	const characterRotation = [
+		'Abby',
+		'Dina',
+		'Joel',
+		'Lev',
+		'Tommy',
+		'Yara',
+		'Jessie',
+		'Manny',
+		'Mel',
+		'Marlene',
+		'Bill',
+		'Ellie'
+	];
+
+	const dailyRunSeed: number = getSeed(new Date());
+	const dailyRunCharacter: string = getCharacter(new Date());
+
+	let selectedDate: Date | null = null;
+
 	function daysSince(date1: Date, date2: Date): number {
 		const timeDiff = date1.getTime() - date2.getTime();
 		return Math.floor(timeDiff / (1000 * 60 * 60 * 24));
 	}
 
+	// my reverse engineered way
+	// function getSeedOld(date: Date): number {
+	// 	return daysSince(date, releaseDate) + firstSeed;
+	// }
+
+	// the literal way they calculate the seed
 	function getSeed(date: Date): number {
-		return daysSince(date, releaseDate) + firstSeed;
+		return daysSince(date, new Date('1970-01-01'));
+	}
+
+	function getCharacter(date: Date): string {
+		const characterIndex = daysSince(date, releaseDate) % characterRotation.length;
+		return characterRotation[characterIndex];
 	}
 </script>
 
@@ -32,7 +59,10 @@
 		<h2 class="mb-2 text-center">
 			<span class="text-orange-500">Today</span>'s daily run seed is:
 		</h2>
-		<h3 class="text-white">{dailyRunSeed}</h3>
+		<h3>{dailyRunSeed}</h3>
+		<p class="special-paragraph">
+			playing as <span class="text-orange-500 font-semibold">{dailyRunCharacter}</span>
+		</p>
 	</div>
 	<div class="center mt-2">
 		<h3>Pick a date:</h3>
@@ -48,7 +78,12 @@
 						{new Date(selectedDate).toLocaleDateString('en-US', dateOptions)}</span
 					> was:
 				</p>
-				<p class="text-white font-semibold">{getSeed(new Date(selectedDate))}</p>
+				<p class="font-semibold">{getSeed(new Date(selectedDate))}</p>
+				<p>
+					playing as <span class="text-orange-500 font-semibold"
+						>{getCharacter(new Date(selectedDate))}</span
+					>
+				</p>
 			{:else}
 				<p class="mt-2">
 					Please select a date <span class="text-orange-500">before</span> today to see the seed.

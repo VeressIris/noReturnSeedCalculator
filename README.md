@@ -1,38 +1,23 @@
-# sv
+# The Last of Us Part II No Return Seed calculator
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+## What does this app do?
 
-## Creating a project
+Calculates _both_ the seed and the character for any daily run in The Last Of Us Part II Remastered No Return game mode.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## How?
 
-```bash
-# create a new project in the current directory
-npx sv create
+The daily seed is just the amount of days since January 1st, 1970.
+The characters cycle in this order:
 
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+1. Abby
+2. Dina
+3. Joel
+4. Lev
+5. Tommy
+6. Yara
+7. Jessie
+8. Manny
+9. Mel
+10. Marlene
+11. Bill
+12. Ellie
