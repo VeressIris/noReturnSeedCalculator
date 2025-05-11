@@ -1,0 +1,8 @@
+{
+	"rewrites": [
+		{
+			"source": "/v1/vitals",
+			"destination": "https://vitals.vercel-analytics.com/v1/vitals"
+		}
+	]
+}
