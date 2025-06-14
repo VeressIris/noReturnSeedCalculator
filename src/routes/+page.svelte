@@ -16,7 +16,7 @@
 		'Lev',
 		'Tommy',
 		'Yara',
-		'Jessie',
+		'Jesse',
 		'Manny',
 		'Mel',
 		'Marlene',
