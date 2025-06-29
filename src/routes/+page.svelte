@@ -83,7 +83,7 @@
 			playing as <span class="text-orange-500 font-semibold">{dailyRunCharacter}</span>
 		</p>
 	</div>
-	<div class="center mt-2">
+	<div class="center my-2">
 		<h3>Pick a date:</h3>
 		<input
 			type="date"
@@ -97,5 +97,37 @@
 				{@render otherDays(selectedDate, 'will be')}
 			{/if}
 		{/if}
+	</div>
+	<div class="mt-24">
+		<h2 class="mb-2">Mentions</h2>
+		<div class="flex flex-col items-center my-4">
+			<iframe
+				class="w-[384px] h-[216px] sm:w-[640px] sm:h-[360px]"
+				src="https://www.youtube.com/embed/NHqPko5n_v0"
+				title="No Return Daily Run Seed Calculator"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				referrerpolicy="strict-origin-when-cross-origin"
+				allowfullscreen
+			></iframe>
+			<h3 class="mt-2">Anthony Caliber</h3>
+		</div>
+		<div class="flex flex-col items-center my-4">
+			<blockquote
+				class="reddit-embed-bq"
+				style="height:316px"
+				data-embed-theme="dark"
+				data-embed-height="316"
+			>
+				<a
+					href="https://www.reddit.com/r/thelastofus/comments/1kx6957/where_do_streamers_find_the_no_return_seed_code/"
+					>Where do streamers find the No Return seed code to play a particular Daily Run after it's
+					no longer the active Daily Run?</a
+				><br /> by<a href="https://www.reddit.com/user/Lincolns_Revenge/">u/Lincolns_Revenge</a>
+				in<a href="https://www.reddit.com/r/thelastofus/">thelastofus</a>
+			</blockquote>
+			<script src="https://embed.reddit.com/widgets.js" charset="UTF-8"></script>
+			<h3 class="mt-2">Reddit thread</h3>
+		</div>
 	</div>
 </div>

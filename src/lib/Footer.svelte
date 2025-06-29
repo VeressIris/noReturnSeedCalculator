@@ -1,6 +1,4 @@
-<footer
-	class="w-full footer-color absolute bottom-0 py-3.5 flex items-center px-4 justify-between md:px-10"
->
+<footer class="w-full footer-color py-3.5 flex items-center px-4 justify-between md:px-10">
 	<a
 		href="mailto:midnightdove.dev@gmail.com?subject=No Return Seed Calculator feedback"
 		target="_blank"
