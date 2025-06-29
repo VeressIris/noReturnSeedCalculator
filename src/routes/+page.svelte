@@ -65,6 +65,8 @@
 	</p>
 {/snippet}
 
+<svelte:head><title>Daily Run Seed | No return - TLOU2</title></svelte:head>
+
 <div class="center mt-14 mx-12">
 	<div class="mb-4">
 		<h1 class="mb-2">

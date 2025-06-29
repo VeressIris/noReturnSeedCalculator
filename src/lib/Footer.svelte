@@ -1,4 +1,4 @@
-<div
+<footer
 	class="w-full footer-color absolute bottom-0 py-3.5 flex items-center px-4 justify-between md:px-10"
 >
 	<a
@@ -39,4 +39,4 @@
 			/></svg
 		></a
 	>
-</div>
+</footer>
